@@ -8,14 +8,24 @@ if img is None:
 
 BrushSiz=5					# 붓의 크기
 LColor,RColor=(255,0,0),(0,0,255)		# 파란색과 빨간색
+GColor = (0, 255, 0) #초록색
 
 def painting(event,x,y,flags,param):        # 마우스 콜백 함수
     if event==cv2.EVENT_LBUTTONDOWN:
-        cv2.circle(img,(x,y),BrushSiz,LColor,-1)# 마우스 왼쪽 버튼 클릭하면 파란색
+        if flags&cv2.EVENT_FLAG_SHIFTKEY:
+            cv2.circle(img, (x,y), BrushSiz, GColor, -1)
+        else:
+            cv2.circle(img,(x,y),BrushSiz,LColor,-1)# 마우스 왼쪽 버튼 클릭하면 파란색
+
     elif event==cv2.EVENT_RBUTTONDOWN:
         cv2.circle(img,(x,y),BrushSiz,RColor,-1)# 마우스 오른쪽 버튼 클릭하면 빨간색
+
     elif event==cv2.EVENT_MOUSEMOVE and flags&cv2.EVENT_FLAG_LBUTTON:
-        cv2.circle(img,(x,y),BrushSiz,LColor,-1)#2 왼쪽 버튼 클릭하고 이동하면 파란색
+        if flags&cv2.EVENT_FLAG_SHIFTKEY:
+            cv2.circle(img, (x,y), BrushSiz, GColor, -1)
+        else:
+            cv2.circle(img,(x,y),BrushSiz,LColor,-1)#2 왼쪽 버튼 클릭하고 이동하면 파란색
+
     elif event==cv2.EVENT_MOUSEMOVE and flags&cv2.EVENT_FLAG_RBUTTON:
         cv2.circle(img,(x,y),BrushSiz,RColor,-1)# 오른쪽 버튼 클릭하고 이동하면 빨간색
 

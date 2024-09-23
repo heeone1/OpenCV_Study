@@ -13,6 +13,11 @@ def draw(event,x,y,flags,param):        # 마우스 콜백 함수
     elif event==cv2.EVENT_LBUTTONUP:	# 마우스 왼쪽 버튼 클릭했을 때 직사각형 그리기
         cv2.rectangle(img,(ix,iy),(x,y),(0,0,255),2)
 
+    elif event ==cv2.EVENT_RBUTTONDOWN: # 마우스 오른쪽 버튼 클릭했을 때 초기 위치 저장
+        ix, iy = x, y
+    elif event==cv2.EVENT_RBUTTONUP: # 마우스 오른쪽 버튼 클릭했을 때 직사각형 그리기
+        cv2.rectangle(img, (ix, iy), (x, y), (255, 0, 255), 2)
+
     cv2.imshow('Drawing',img)
     
 cv2.namedWindow('Drawing')
