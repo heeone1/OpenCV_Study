@@ -51,11 +51,3 @@ while True:  # 무한루프로
 
 cap.release()
 cv2.destroyAllWindows()
-
-
-
-
-
-
-
-
