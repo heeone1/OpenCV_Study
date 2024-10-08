@@ -14,7 +14,7 @@ emboss1a=np.uint8(cv2.filter2D(gray16,-1,femboss1)) #순수하게 엠보싱만 �
 emboss1b=np.uint8(cv2.filter2D(gray16,-1,femboss1)+128)
 emboss1=np.uint8(np.clip(cv2.filter2D(gray16,-1,femboss1)+128,0,255))  # 0보다 작으면 0, 255보다 크면 255
 emboss=np.hstack((emboss1a,emboss1b, emboss1))
-cv2.imshow('Emboss',emboss1a)
+cv2.imshow('Emboss',emboss)
 
 femboss2=np.array([[-1.0, -1.0, 0.0],
                  [ -1.0, 0.0, 1.0],

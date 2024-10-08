@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 gray=cv2.imread('lenna256.png', cv2.IMREAD_GRAYSCALE)
-gray=cv2.imread('coins.png',cv2.IMREAD_GRAYSCALE)
-gray=cv2.imread('check.png',cv2.IMREAD_GRAYSCALE)
+# gray=cv2.imread('coins.png',cv2.IMREAD_GRAYSCALE)
+# gray=cv2.imread('check.png',cv2.IMREAD_GRAYSCALE)
 
 blur=cv2.blur(gray,(3,3))	# 에지 검출의 전처리과정 : 스무딩, 잡음 제거
 

@@ -3,7 +3,7 @@ import numpy as np
 
 gray=cv2.imread('lenna256.png', cv2.IMREAD_GRAYSCALE)
 
-laplacian = cv2.Laplacian(gray, -1)
+laplacian = cv2.Laplacian(gray, -1) #2차 미분
 cv2.imshow('Laplacian',laplacian)
 
 # 샤프닝 필터와 비교
