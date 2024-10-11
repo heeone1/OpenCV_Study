@@ -10,6 +10,7 @@ while True:  # 무한루프로
         break
 
     key = cv2.waitKey(1)
+
     bila = cv2.bilateralFilter(frame, -1, 10, 5)
     sty = cv2.stylization(frame, sigma_s=60, sigma_r=0.45)
     graySketch, colorSketch = cv2.pencilSketch(frame, sigma_s=60, sigma_r=0.7, shade_factor=0.02)
