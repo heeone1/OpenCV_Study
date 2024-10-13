@@ -12,10 +12,10 @@ def car (img):
     prewitt_grad_x = cv2.filter2D(blur, -1, prewitt_filter_x)
 
     # 검은 배경과 흰 에지 분리
-    _, th = cv2.threshold(prewitt_grad_x, 150, 255, cv2.THRESH_BINARY)
+    _, th = cv2.threshold(prewitt_grad_x, 100, 255, cv2.THRESH_BINARY)
 
     # close
-    se2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (20, 5))
+    se2 = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
     b_closing = cv2.erode(cv2.dilate(th, se2, iterations=3), se2, iterations=3)
 
     cv2.imshow('Morphology', b_closing)
