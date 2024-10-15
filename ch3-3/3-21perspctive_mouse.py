@@ -38,9 +38,9 @@ def onMouse(event, x, y, flags, param):
 image = cv2.imread('perspective2.jpg')
 
 small = np.array((12, 12))  # 좌표 사각형 크기
-check = -1  # 선택 좌표 사각형 번호 초기화
+check = -1  # 선택 좌표 사각형 번호 초기화 #아직 아무것도 체크 되지 않은 거임
 pts1 = np.float32([(100, 100), (300, 100), (300, 300), (100, 300)])
-pts2 = np.float32([(0, 0), (399, 0), (399, 349), (0, 349)])
+pts2 = np.float32([(0, 0), (399, 0), (399, 349), (0, 349)]) #400*350 크기로 바꾸겠다
 
 draw_rect(np.copy(image))
 cv2.setMouseCallback("select rect", onMouse, 0)

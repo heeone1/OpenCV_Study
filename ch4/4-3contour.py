@@ -14,8 +14,8 @@ gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 canny=cv2.Canny(gray,100,200)    # 에지 영상
 cv2.imshow('Canny edges',canny)
 
-contours,hierarchy=cv2.findContours(canny,mode=cv2.RETR_LIST,method=cv2.CHAIN_APPROX_NONE)
-#contour,hierarchy=cv2.findContours(canny,mode=cv2.RETR_EXTERNAL,method=cv2.CHAIN_APPROX_NONE)
+# contours,hierarchy=cv2.findContours(canny,mode=cv2.RETR_LIST,method=cv2.CHAIN_APPROX_NONE)
+contours,hierarchy=cv2.findContours(canny,mode=cv2.RETR_EXTERNAL,method=cv2.CHAIN_APPROX_NONE)
 print(contours)
 
 lcontours=[]
