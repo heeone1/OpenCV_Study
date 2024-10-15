@@ -17,7 +17,7 @@ cv2.imshow('Binary', gray_bin)
 #cnt, labels = cv2.connectedComponents(gray_bin)
 cnt, labels, stats, centroids = cv2.connectedComponentsWithStats(gray_bin)
 print(cnt) #객체 개수 몇갠지
-cv2.imshow('labelling', (labels*50).astype(np.unit8))
+cv2.imshow('labelling', (labels*50).astype(np.uint8))
 
 img[labels == 0] = [127,127,127] #회색
 img[labels == 1] = [127,0,0] #파
