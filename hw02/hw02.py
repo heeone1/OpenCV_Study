@@ -10,7 +10,8 @@ def car (img):
     blur = cv2.blur(gray, (3, 3))
 
     # 수직 에지
-    prewitt_filter_x = np.array([[1, 0, -1], [1, 0, -1], [1, 0, -1]])
+    # prewitt_filter_x = np.array([[1, 0, -1], [1, 0, -1], [1, 0, -1]])
+    prewitt_filter_x = np.array([[-1, 0, 1], [-1, 0, 1], [-1, 0, 1]])
     prewitt_grad_x = cv2.filter2D(blur, -1, prewitt_filter_x)
 
     # 검은 배경과 흰 에지 분리
