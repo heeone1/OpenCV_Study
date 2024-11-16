@@ -34,5 +34,6 @@ while True:
     if key == ord('q'):
         break
 
-cap.release()		# 카메라와 연결을 끊음
+# 카메라와 연결을 끊음
+cap.release()
 cv2.destroyAllWindows()
