@@ -20,6 +20,8 @@ for (x, y, x2, y2) in faces:    # 검출된 모든 얼굴에 대해
     text = f'{label[gender]}:{g_confidence[gender]:.1%}'
     cv2.putText(img, text, (x,y-10), cv2.FONT_HERSHEY_PLAIN, 2, (255, 0, 255), 2)
 
+# dst_resized = cv2.resize(dst, (dst.shape[1] // 3, dst.shape[0] // 3)
+
 cv2.imshow('CVLIB - gender detection',img)
 
 cv2.waitKey()

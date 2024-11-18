@@ -5,7 +5,7 @@ import dlib # cmake, wheel 패키지 설치 후 dlib 패키지 설치
 detector = dlib.get_frontal_face_detector()	# 얼굴 검출기
 predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat') # 랜드마크 검출기
 
-img = cv2.imread("kimjiwon.jpg")
+img = cv2.imread("hee.jpg")
 if img is None:
     sys.exit('파일을 찾을 수 없습니다.')
 
@@ -23,6 +23,7 @@ for rect in faces:
         cv2.circle(img, (part.x, part.y), 2, (0, 0, 255), -1)
         cv2.putText(img, str(i), (part.x, part.y), cv2.FONT_HERSHEY_PLAIN, 0.5,(255,255,255), 1, cv2.LINE_AA)
 
+img = cv2.resize(img, (img.shape[1] // 3, img.shape[0] // 3))
 cv2.imshow('DLIB - face landmarks',img)
 
 cv2.waitKey()
