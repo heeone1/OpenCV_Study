@@ -24,7 +24,7 @@ while True:
         #cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 1) # 얼굴 영역 좌표로 사각형 표시
 
         shape = predictor(gray, rect)	# 랜드마크 검출기로 얼굴 랜드마크 검출
-        for i in range(48,68):   	# 각 랜드마크 좌표 추출 및 표시
+        for i in range(48,68):   	# 각 랜드마크 좌표 추출 및 표시  (48,68) = 입술만 #range(0,68) = 모든 얼굴의 랜드마크 보임
             part = shape.part(i)
             cv2.circle(frame, (part.x, part.y), 2, (255, 0, 255), -1)
 
