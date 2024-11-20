@@ -4,7 +4,7 @@ import dlib
 import numpy as np
 
 detector = dlib.get_frontal_face_detector()	# 얼굴 검출기
-predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat') # 랜드마크 검출기
+predictor = dlib.shape_predictor('../ch7/shape_predictor_68_face_landmarks.dat') # 랜드마크 검출기
 
 # Check if a point is inside a rectangle
 def rect_contains(rect, point):
@@ -148,8 +148,8 @@ def morph_triangle(img1, img2, img, t1, t2, t, alpha) :
     # Copy triangular region of the rectangular patch to the output image
     img[r[1]:r[1]+r[3], r[0]:r[0]+r[2]] = img[r[1]:r[1]+r[3], r[0]:r[0]+r[2]] * ( 1 - mask ) + imgRect * mask
 
-img1 = cv2.imread('morph_images/Clinton.jpg')
-img2 = cv2.imread('morph_images/Bush.jpg')
+img1 = cv2.imread('p1.png')
+img2 = cv2.imread('p2.png')
 cv2.imshow('morphing face1',img1)
 cv2.imshow('morphing face2',img2)
 
