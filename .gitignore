@@ -1,6 +1,6 @@
-coco*
-mask*
-MobileNetSSD
-object*
+ch8/coco*
+ch8/mask*
+ch8/MobileNetSSD
+ch8/object*
 ch7/img.png
-yolo*
+ch8/yolov3*
