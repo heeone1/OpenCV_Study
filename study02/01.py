@@ -1,18 +1,20 @@
 import cv2
 import sys
 
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml') # Face 분류기 로드
+face_cascade = cv2.CascadeClassifier('../ch7/haarcascade_frontalface_default.xml') # Face 분류기 로드
 
-img = cv2.imread('face_w1.jpg')
+#1,3,5 - 3
+#2,4 - 1
+img = cv2.imread('./s1/p2.jpg')
 
 if img is None:
     sys.exit('파일을 찾을 수 없습니다.')
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  # 그레이 이미지로 변환
-faces = face_cascade.detectMultiScale(gray, 1.3, 5) # 얼굴 검출
+faces = face_cascade.detectMultiScale(gray, 1.3, 1) # 얼굴 검출
 
 #face_mask = cv2.imread('mask_hannibal2.png')   # 가면 이미지
-face_mask=cv2.imread('mask_fire.png')
+face_mask=cv2.imread('smile.jpg')
 h_mask, w_mask = face_mask.shape[:2]
 
 for (x,y,w,h) in faces:
@@ -36,6 +38,7 @@ for (x,y,w,h) in faces:
         cv2.moveWindow('1', 600, 50)
         cv2.imshow('2', masked_img)
         cv2.moveWindow('2', 900, 50)  # Move it to(x,y)
+        img = cv2.resize(img, (img.shape[1] //2, img.shape[0] // 2))
         cv2.imshow('Play with face',img)
 
 cv2.waitKey()
