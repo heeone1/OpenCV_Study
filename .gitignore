@@ -8,3 +8,7 @@ ch8/MobileNetSSD_deploy.prototxt
 ch8/object*
 ch7/img.png
 ch8/yolov3*
+ch7/shape_predictor_68_face_landmarks.dat
+hw03/record.mp4
+hw03/hand.mp4
+ch8/fonts/gulim.ttc
