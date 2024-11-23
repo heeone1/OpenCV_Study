@@ -1,3 +1,7 @@
+ch8/mask_rcnn_inception_v2_coco_2018_01_28.pbtxt
+ch8/frozen_inference_graph.pb
+ch8/yolov3.cfg
+ch8/yolov3.weights
 ch8/mask*
 ch8/MobileNetSSD_deploy.caffemodel
 ch8/MobileNetSSD_deploy.prototxt
