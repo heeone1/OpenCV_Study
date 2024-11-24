@@ -34,6 +34,7 @@ for i in range(boxes.shape[2]):
     x2 = int(box[5] * width)
     y2 = int(box[6] * height)
 
+
     # 1 detection : boxes
     text = str(class_names[class_id]) + '%.3f' % confidence
     cv2.rectangle(img, (x, y), (x2, y2), colors[class_id], 2)
