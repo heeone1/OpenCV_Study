@@ -44,8 +44,7 @@ for i in range(boxes.shape[2]):
     roi = img[y: y2, x: x2]     # 객체 영역 roi로 잘라냄
     roi_height, roi_width, _ = roi.shape
     # Get the mask
-    mask = masks[i, class_id]
-    mask = cv2.resize(mask, (roi_width, roi_height)) #마스크 크기 roi와 동일하게 만들어줌
+    mask = masks[i, class_id] #15*15
     _, mask = cv2.threshold(mask, 0.5, 255, cv2.THRESH_BINARY)  # mask로 객체 영역 획득
     contours, _ = cv2.findContours(np.array(mask, np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)    # 객체 영역의 윤곽선 획득
     for cnt in contours:
