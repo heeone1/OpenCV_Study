@@ -25,13 +25,13 @@ while True:
         roi = frame[y : y + h, x : x + w]
 
         # 1 스무딩을 이용한 모자익
-        roi = cv2.GaussianBlur(roi, (ksize, ksize), 0.0) # 블러링 : 모자이크1-1
+        #roi = cv2.GaussianBlur(roi, (ksize, ksize), 0.0) # 블러링 : 모자이크1-1
         # roi = cv2.blur(roi, (ksize, kize), 0.0) # 블러링 : 모자이크1-2
         # roi = cv2.medianBlur(roi, ksize)
 
         # 2 크기 변환을 이용한 모자익
-        # roi = cv2.resize(roi,(w//ksize,h//ksize))
-        # roi = cv2.resize(roi, (w,h), interpolation=cv2.INTER_NEAREST)
+        roi = cv2.resize(roi,(w//ksize,h//ksize))
+        roi = cv2.resize(roi, (w,h), interpolation=cv2.INTER_NEAREST)
 
         frame[y:y+h, x:x+w] = roi   # 원본 이미지에 적용
 
